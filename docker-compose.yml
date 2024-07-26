@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  server: 
+    image: employee-service:debug
+    build:
+      context: .
+      dockerfile: Dockerfile 
+      target: debug
+    ports:
+      - 8080:8080
+      - 40000:40000
+    security_opt: 
+      - seccomp:unconfined
